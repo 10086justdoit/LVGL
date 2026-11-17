@@ -26,6 +26,8 @@
 
 #include "hal/hal.h"
 
+#include "ui/ui.h"
+
 /*********************
  *      DEFINES
  *********************/
@@ -71,14 +73,7 @@ int main(int argc, char **argv)
   /* - etc. */
   //lv_demo_widgets();
 
-  // 1.获取整个硬件屏幕
-  lv_obj_t * scr = lv_screen_active();
-
-  // 2.创建一个新的框
-  lv_obj_t * obj = lv_obj_create(scr);
-
-  //创建一个按钮
-  lv_obj_t * btn = lv_button_create(obj);
+  ui_init();
 
   while(1) {
     /* Periodically call the lv_task handler.
